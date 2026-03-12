@@ -15,8 +15,374 @@
 :root {
   --black: #000000;
   --white: #ffffff;
+  --amber-gold: #fbbc05;
+  --red: #ff0000;
+  --blue: #0000ff;
 }
 
 body {
   margin: 0;
+  background-color: var(--amber-gold);
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH SMALL SCREEN SIZE =============== */
+/* ============================================================ */
+@media screen and (min-width: 320px) {
+  .wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  .rope {
+    position: absolute;
+    top: 0%;
+    width: 1.6px;
+    height: 35%;
+    animation: swing 2s infinite;
+  }
+
+  @keyframes swing {
+    50% {
+      transform: translateY(-25%);
+    }
+  }
+
+  .rope_background-color_white {
+    background-color: var(--white);
+  }
+
+  .legs {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 91%;
+    left: 50%;
+    width: 120px;
+    height: 16px;
+    border-radius: 40px;
+  }
+
+  .legs_background_color_transparent {
+    background-color: transparent;
+  }
+
+  .legs_box-shadow {
+    box-shadow: 0 0 0 1.92px var(--blue), 0 0 0 16.96px var(--blue),
+      0 0 0 18.88px var(--blue);
+  }
+
+  .boot-left,
+  .boot-right {
+    position: absolute;
+    bottom: 15px;
+    width: 40px;
+    height: 20px;
+    border: solid 1.6px;
+  }
+
+  .boot_background-color_red {
+    background-color: var(--red);
+  }
+
+  .boot_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .boot-left {
+    left: 19px;
+  }
+
+  .boot-right {
+    transform: rotateY(180deg);
+    left: 61px;
+  }
+
+  .boot-left::before,
+  .boot-right::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 18.5px;
+    left: 22.5px;
+    border-bottom: solid 16px;
+    border-left: solid 16px;
+  }
+
+  .boot_border-bottom-color_blue::before {
+    border-bottom-color: var(--blue);
+  }
+
+  .boot_border-left-color_transparent::before {
+    border-left-color: transparent;
+  }
+
+  .boot-left::after,
+  .boot-right::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -14.5px;
+    right: 0;
+    border-bottom: solid 16px;
+    border-left: solid 16px;
+  }
+
+  .boot_border-bottom-color_red::after {
+    border-bottom-color: var(--red);
+  }
+
+  .boot_border-left-color_transparent::after {
+    border-left-color: transparent;
+  }
+
+  .costume {
+    position: absolute;
+    width: 88px;
+    height: 96px;
+    top: 288px;
+    left: -40px;
+    background: linear-gradient(
+      to right,
+      var(--blue) 20%,
+      var(--red) 20%,
+      var(--red) 80%,
+      var(--blue) 80%
+    );
+    border: solid 1.6px;
+  }
+
+  .costume_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .spider {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: calc(50% + 16px);
+    left: 50%;
+    width: 16px;
+    height: 29px;
+    border-radius: 45%;
+  }
+
+  .spider_background-color_black {
+    background-color: var(--black);
+  }
+
+  .s1,
+  .s2,
+  .s3,
+  .s4 {
+    position: absolute;
+    left: 50%;
+    width: 32px;
+    height: 40px;
+    border-radius: 0 0 32px 32px;
+    border-bottom: solid 1.6px;
+  }
+
+  .s1,
+  .s2 {
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .s3,
+  .s4 {
+    transform: translateX(-50%) rotateX(180deg);
+  }
+
+  .s1 {
+    bottom: 24px;
+  }
+
+  .s2 {
+    bottom: 16px;
+  }
+
+  .s3 {
+    top: 24px;
+  }
+
+  .s4 {
+    top: 16px;
+  }
+
+  .s_border-bottom-color_black {
+    border-bottom-color: var(--black);
+  }
+
+  .belt {
+    position: absolute;
+    top: -2.4px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 88px;
+    height: 8px;
+    border: solid 1.6px;
+  }
+
+  .belt_background-color_red {
+    background-color: var(--red);
+  }
+
+  .belt_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .hand-left,
+  .hand-right {
+    position: absolute;
+    transform-origin: bottom;
+    bottom: -2.4px;
+    width: 16px;
+    height: 128px;
+    background: linear-gradient(
+      var(--red) 74px,
+      var(--blue) 74px,
+      var(--blue) 76px,
+      var(--blue) 76px,
+      var(--blue) 130px
+    );
+    border: solid 1.6px;
+    border-radius: 20px;
+  }
+
+  .hand-left {
+    right: 95%;
+    transform: rotate(22deg);
+  }
+
+  .hand-right {
+    left: 95%;
+    transform: rotate(-22deg);
+  }
+
+  .hand_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .neck {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 101%;
+    left: 50%;
+    width: 20px;
+    height: 4.8px;
+    border: solid 1.6px;
+  }
+
+  .neck_background-color_red {
+    background-color: var(--red);
+  }
+
+  .neck_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .mask {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 105%;
+    left: 50%;
+    width: 64px;
+    height: 72px;
+    border: solid 1.6px;
+    border-radius: 50% 50% 50% 50% / 54% 54% 54% 54%;
+  }
+
+  .mask_background-color_red {
+    background-color: var(--red);
+  }
+
+  .mask_border-color_blue {
+    border-color: var(--blue);
+  }
+
+  .eye-left,
+  .eye-right {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 12.8px;
+    border: solid 1.6px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .eye-left {
+    left: 10%;
+  }
+
+  .eye-right {
+    right: 10%;
+  }
+
+  .eye_background-color_white {
+    background-color: var(--white);
+  }
+
+  .eye_border-color_black {
+    border-color: var(--black);
+  }
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH MEDIUM SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 390px) {
+  .square {
+    width: 20em;
+    height: 20em;
+  }
+
+  .costume {
+    top: 304px;
+  }
+}
+
+/* ============================================================ */
+/* =============== MOBILE WITH LARGE SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 428px) {
+  .square {
+    width: 22em;
+    height: 22em;
+  }
+
+  .costume {
+    top: 320px;
+  }
+}
+
+/* ============================================================ */
+/* ========================== TABLET ========================== */
+/* ============================================================ */
+@media screen and (min-width: 768px) {
+  .square {
+    width: 20em;
+    height: 20em;
+  }
+
+  .costume {
+    top: 360px;
+  }
+}
+
+/* ============================================================ */
+/* ========================== DESKTOP ========================= */
+/* ============================================================ */
+@media screen and (min-width: 992px) {
+  .square {
+    width: 40em;
+    height: 40em;
+  }
+
+  .costume {
+    top: 328px;
+  }
 }
